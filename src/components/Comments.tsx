@@ -39,20 +39,12 @@ const comments = [
 ];
 export default function Comments() {
   return (
-    <div className="bg-white py-12">
-      <div className="container mx-auto max-w-[800px] px-4">
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-2">
-            <h2 className="text-2xl font-bold text-[#1a1d29]">Comments</h2>
-            <div className="flex items-center gap-1">
-              <div className="w-2 h-2 bg-[#4caf50] rounded-full" />
-              <span className="text-sm text-gray-600">99%</span>
-            </div>
-          </div>
-        </div>
-        <div className="space-y-6">
+    <div className="max-w-4xl mx-auto px-3 md:px-4 pb-6 md:pb-12">
+      <div className="bg-gray-50 rounded-lg p-4 md:p-6">
+        <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Comments</h2>
+        <div className="space-y-0">
           {comments.map((comment, index) => (
-            <CommentCard key={index} {...comment} />
+            <CommentCard key={index} {...comment} isLast={index === comments.length - 1} />
           ))}
         </div>
       </div>
